@@ -1,4 +1,4 @@
-import "../styles/WaitingRoom.css";
+import "../styles/waitingRoom.css";
 
 export default function WaitingRoom({
   players,
