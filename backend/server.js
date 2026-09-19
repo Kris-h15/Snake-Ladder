@@ -10,7 +10,7 @@ const io = new Server(server, { cors: { origin: "*" } });
 
 app.use(express.static(path.join(__dirname, "public")));
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 let rooms = {};
 
@@ -136,6 +136,6 @@ io.on("connection", (socket) => {
 
 // -----------------------------------------------------------------
 
-server.listen(port, () => {
+server.listen(port, "0.0.0.0", () => {
   console.log(`Listening at port : ${port}`);
 });
