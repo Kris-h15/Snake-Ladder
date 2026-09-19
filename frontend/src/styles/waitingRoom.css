@@ -1,0 +1,497 @@
+* {
+  box-sizing: border-box;
+}
+
+/* =================================
+   PAGE
+================================= */
+
+.waiting-page {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: linear-gradient(135deg, #eef2ff, #dbeafe, #f8fafc);
+
+  overflow: hidden;
+
+  position: relative;
+}
+
+/* Decorative circles */
+
+.waiting-page::before {
+  content: "";
+
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  border-radius: 50%;
+
+  background: rgba(59, 130, 246, 0.08);
+
+  top: -140px;
+  left: -120px;
+}
+
+.waiting-page::after {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  border-radius: 50%;
+
+  background: rgba(34, 197, 94, 0.08);
+
+  bottom: -120px;
+  right: -100px;
+}
+
+/* =================================
+   CARD
+================================= */
+
+.waiting-card {
+  width: 100%;
+  max-width: 500px;
+
+  max-height: 95vh;
+
+  padding: 30px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border-radius: 24px;
+
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15);
+
+  position: relative;
+
+  z-index: 2;
+
+  overflow: hidden;
+}
+
+/* =================================
+   HEADER
+================================= */
+
+.waiting-header {
+  text-align: center;
+
+  margin-bottom: 22px;
+}
+
+.waiting-icon {
+  width: 60px;
+  height: 60px;
+
+  margin: 0 auto 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 17px;
+
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+
+  font-size: 32px;
+}
+
+.waiting-header h1 {
+  margin: 0;
+
+  font-size: 28px;
+
+  font-weight: 800;
+
+  color: #172554;
+}
+
+.waiting-header p {
+  margin: 6px 0 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+/* =================================
+   ROOM CODE
+================================= */
+
+.room-code-box {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 15px 18px;
+
+  margin-bottom: 22px;
+
+  border-radius: 14px;
+
+  background: #eff6ff;
+
+  border: 1px solid #bfdbfe;
+}
+
+.room-label {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #64748b;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.room-code-box h2 {
+  margin: 0;
+
+  color: #1d4ed8;
+
+  font-size: 25px;
+
+  letter-spacing: 4px;
+}
+
+.copy-button {
+  border: none;
+
+  padding: 9px 12px;
+
+  border-radius: 9px;
+
+  background: white;
+
+  color: #2563eb;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+
+  transition: 0.2s;
+}
+
+.copy-button:hover {
+  transform: translateY(-1px);
+
+  box-shadow: 0 5px 12px rgba(15, 23, 42, 0.12);
+}
+
+/* =================================
+   PLAYERS
+================================= */
+
+.players-section {
+  margin-bottom: 20px;
+}
+
+.players-heading {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 10px;
+}
+
+.players-heading h3 {
+  margin: 0;
+
+  color: #334155;
+
+  font-size: 15px;
+}
+
+.players-heading span {
+  padding: 4px 9px;
+
+  border-radius: 20px;
+
+  background: #f1f5f9;
+
+  color: #64748b;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+/* =================================
+   PLAYER LIST
+================================= */
+
+.players-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.waiting-player,
+.empty-player {
+  min-height: 52px;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 8px 12px;
+
+  border-radius: 12px;
+}
+
+/* Real player */
+
+.waiting-player {
+  background: #f8fafc;
+
+  border: 1px solid #e2e8f0;
+}
+
+.player-color {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  color: white;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  border: 3px solid white;
+
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.15);
+}
+
+.player-details {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-left: 11px;
+}
+
+.player-name {
+  color: #1e293b;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+.host-badge {
+  padding: 3px 6px;
+
+  border-radius: 5px;
+
+  background: #fef3c7;
+
+  color: #92400e;
+
+  font-size: 8px;
+
+  font-weight: 800;
+}
+
+.crown {
+  margin-left: auto;
+
+  font-size: 18px;
+}
+
+/* =================================
+   EMPTY PLAYER
+================================= */
+
+.empty-player {
+  border: 1px dashed #cbd5e1;
+
+  background: #f8fafc;
+
+  color: #94a3b8;
+
+  font-size: 12px;
+}
+
+.empty-icon {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border: 2px dashed #cbd5e1;
+
+  color: #94a3b8;
+
+  font-size: 20px;
+}
+
+.empty-player span {
+  margin-left: 11px;
+}
+
+/* =================================
+   START GAME
+================================= */
+
+.start-section {
+  text-align: center;
+
+  margin-top: 20px;
+}
+
+.start-button {
+  width: 100%;
+
+  padding: 13px;
+
+  border: none;
+
+  border-radius: 11px;
+
+  background: #2563eb;
+
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.start-button:hover:not(:disabled) {
+  background: #1d4ed8;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.25);
+}
+
+.start-button:disabled {
+  background: #cbd5e1;
+
+  cursor: not-allowed;
+}
+
+.minimum-players {
+  margin: 7px 0 0;
+
+  color: #94a3b8;
+
+  font-size: 10px;
+}
+
+/* =================================
+   WAITING MESSAGE
+================================= */
+
+.waiting-message {
+  width: 100%;
+
+  padding: 13px;
+
+  border-radius: 11px;
+
+  background: #f1f5f9;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+/* =================================
+   FOOTER
+================================= */
+
+.game-rules {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 20px;
+
+  padding-top: 16px;
+
+  border-top: 1px solid #e2e8f0;
+
+  color: #94a3b8;
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 500px) {
+  .waiting-page {
+    padding: 12px;
+  }
+
+  .waiting-card {
+    padding: 22px 18px;
+
+    border-radius: 20px;
+  }
+
+  .waiting-header h1 {
+    font-size: 24px;
+  }
+
+  .room-code-box h2 {
+    font-size: 22px;
+  }
+}
